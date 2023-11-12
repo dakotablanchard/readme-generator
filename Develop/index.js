@@ -1,8 +1,8 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const fs = require('fs');
 const inq = require("inquirer");
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -23,23 +23,30 @@ const questions = [
         type: 'input',
         message: 'How do you use the app?',
         name: 'usage'
+    },
+    {
+        type: 'list',
+        message: 'What type of licnese are you using?',
+        choices: ['MIT', 'other'],
+        name: 'license'
     }
 ];
 
-// TODO: Create a function to write README file
+// Function to write README file
 function writeToFile(data) {
 
     fileName = data.title
+    description = data.description
 
     fs.appendFile(
-        `${fileName}.md`,
+        `README.md`,
 
-        `# ${fileName} \n \n ${data.description}`,
+        `# ${fileName} \n \n ${description}`,
 
         (err) => err ? console.error(err) : console.log('Commit logged!'))
 }
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
     inq
         .prompt(questions)
@@ -50,22 +57,3 @@ function init() {
 
 // Function call to initialize app
 init();
-
-
-
-// PROMPT EXAMPLE FOR REFERENCE
-// inq.prompt([
-//     {
-//         type: 'input',
-//         message: 'What is your name?',
-//         name: 'username'
-//     },
-//     {
-//         type: 'input',
-//         message: 'What is your age?',
-//         name: 'age'
-//     }
-// ])
-//     .then((response) =>
-//         console.log(response.age)
-//     );
