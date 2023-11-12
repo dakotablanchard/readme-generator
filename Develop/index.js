@@ -28,12 +28,15 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(data) {
+
     fileName = data.title
-    console.log(fileName)
-    // fs.appendFile(
-    //     `${fileName}.md`,
-    //     `${process.argv[2]}\n`,
-    //     (err) => err ? console.error(err) : console.log('Commit logged!'))
+
+    fs.appendFile(
+        `${fileName}.md`,
+
+        `# ${fileName} \n \n ${data.description}`,
+
+        (err) => err ? console.error(err) : console.log('Commit logged!'))
 }
 
 // TODO: Create a function to initialize app
