@@ -56,9 +56,9 @@ function generateMarkdown(data) {
   ${data.contributing}
 
   ## Questions/Contact
-  Feel free to contact with any additional questions!/n
-  GitHub: [${data.githubName}](https://github.com/${data.githubName})/n
-  Email: ${data.email}
+  Feel free to contact with any additional questions!
+  - GitHub: [${data.githubName}](https://github.com/${data.githubName})
+  - Email: ${data.email}
 
   ${renderLicenseSection(data.license)}
   ${renderLicenseBadge(data.license)}
