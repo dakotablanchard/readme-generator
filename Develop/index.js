@@ -48,7 +48,7 @@ const questions = [
     {
         type: 'list',
         message: 'What type of licnese are you using?',
-        choices: ['MIT', 'Other'],
+        choices: ['MIT', 'Apache 2.0', 'Boost Software 1.0', 'Eclipse Public 1.0', 'ISC', 'Other'],
         name: 'license'
     }
 ];
