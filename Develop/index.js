@@ -35,8 +35,14 @@ const questions = [
 // Function to write README file
 function writeToFile(data) {
 
-    fileName = data.title
-    description = data.description
+    let fileName = data.title
+    let description = data.description
+    let installation = ""
+    let usage = ""
+    let license = "" 
+    let contributingTests = "" 
+    let additionalQuestions = "" 
+
 
     fs.appendFile(
         `README.md`,
