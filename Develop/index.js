@@ -1,6 +1,7 @@
 // Packages needed for this application
 const fs = require('fs');
 const inq = require("inquirer");
+const generateMarkdown = require('./utils/generateMarkdown')
 
 // Array of questions for user input
 const questions = [
@@ -25,40 +26,43 @@ const questions = [
         name: 'usage'
     },
     {
+        type: 'input',
+        message: 'Please add test instructions:',
+        name: 'tests'
+    },
+    {
+        type: 'input',
+        message: 'What are the contribution guidelines?',
+        name: 'contributing'
+    },
+    {
+        type: 'input',
+        message: 'Please enter your GitHub username:',
+        name: 'githubName'
+    },
+    {
+        type: 'input',
+        message: 'Please enter your email:',
+        name: 'email'
+    },
+    {
         type: 'list',
         message: 'What type of licnese are you using?',
-        choices: ['MIT', 'other'],
+        choices: ['MIT', 'Other'],
         name: 'license'
     }
 ];
 
 // Function to write README file
-function writeToFile(data) {
-
-    let fileName = data.title
-    let description = data.description
-    let installation = ""
-    let usage = ""
-    let license = "" 
-    let contributingTests = "" 
-    let additionalQuestions = "" 
-
-
-    fs.appendFile(
-        `README.md`,
-
-        `# ${fileName} \n \n ${description}`,
-
-        (err) => err ? console.error(err) : console.log('Commit logged!'))
-}
+// function writeToFile(data) { }
 
 // Function to initialize app
 function init() {
     inq
         .prompt(questions)
         .then((data) => {
-            writeToFile(data)
-        });
+            fs.writeFileSync("./READMETEST.md", generateMarkdown(data));
+        })
 }
 
 // Function call to initialize app
