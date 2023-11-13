@@ -53,10 +53,7 @@ const questions = [
     }
 ];
 
-// Function to write README file
-// function writeToFile(data) { }
-
-// Function to initialize app
+// Function to initialize app and write file
 function init() {
     inq
         .prompt(questions)
