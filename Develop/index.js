@@ -58,7 +58,7 @@ function init() {
     inq
         .prompt(questions)
         .then((data) => {
-            fs.writeFileSync("./READMETEST.md", generateMarkdown(data));
+            fs.writeFileSync("./MYREADME.md", generateMarkdown(data));
         })
 }
 
