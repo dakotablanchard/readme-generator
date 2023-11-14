@@ -1,13 +1,12 @@
-# Professional README Generator Starter Code
+# Professional README Generator
 
-WHEN I choose a license for my application from a list of options
-THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
+## Description
 
 
-# Tools Used
-https://www.npmjs.com/package/inquirer/v/8.2.4
+## Tools Used
+- [Node.js](https://www.npmjs.com/package/inquirer/v/8.2.4)
 
-# Credits
-https://www.educative.io/answers/how-to-use-the-inquirer-node-package
+## Credits
+- [Starter Code](https://github.com/coding-boot-camp/potential-enigma)
 
-https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+- [Markdown License Badges](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)

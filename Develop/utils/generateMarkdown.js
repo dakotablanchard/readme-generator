@@ -41,41 +41,67 @@ function renderLicenseSection(license) {
   }
 }
 
+// Function that returns a link to the license
+// If license is not listed, return an empty string
+function renderLicenseText(license) {
+  if (license === "MIT") {
+    return `[MIT License](https://opensource.org/licenses/MIT)`
+
+  } else if (license === "Apache 2.0") {
+    return `[Apache 2.0](https://opensource.org/licenses/Apache-2.0)`
+
+  } else if (license === "Boost Software 1.0") {
+    return `[Boost Software 1.0}](https://www.boost.org/LICENSE_1_0.txt)`
+
+  } else if (license === "Eclipse Public 1.0") {
+    return `[Eclipse Public 1.0](https://opensource.org/licenses/EPL-1.0)`
+
+  } else if (license === "ISC") {
+    return `[ISC](https://opensource.org/licenses/ISC)`
+
+  } else {
+    return ""
+  }
+}
+
 // Function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  ## Table Of Contents
-  * [Description](#description)
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [Tests](#tests)
-  * [Contributing](#contributing)
-  * [Questions](#questions)
-  ${renderLicenseLink(data.license)}
-  
-  ## Description
-  ${data.description}
+${renderLicenseBadge(data.license)}
 
-  ## Installation
-  ${data.installation}
+## Table Of Contents
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Tests](#tests)
+* [Contributing](#contributing)
+* [Questions](#questions)
+${renderLicenseLink(data.license)}
 
-  ## Usage
-  ${data.usage}
+## Description
+${data.description}
 
-  ## Tests
-  ${data.tests}
+## Installation
+${data.installation}
 
-  ## Contributing
-  ${data.contributing}
+## Usage
+${data.usage}
 
-  ## Questions
-  Feel free to contact with any additional questions!
-  - GitHub: [${data.githubName}](https://github.com/${data.githubName})
-  - Email: ${data.email}
+## Tests
+${data.tests}
 
-  ${renderLicenseSection(data.license)}
-  ${renderLicenseBadge(data.license)}
+## Contributing
+${data.contributing}
+
+## Questions
+Feel free to contact with any additional questions!
+- GitHub: [${data.githubName}](https://github.com/${data.githubName})
+- Email: ${data.email}
+
+${renderLicenseSection(data.license)}
+${renderLicenseText(data.license)}
 `;
 }
 
+// Exporting function to be pulled into index,js
 module.exports = generateMarkdown;
